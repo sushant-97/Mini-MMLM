@@ -14,15 +14,7 @@ To deeply understand how **multimodal large language models (MLLMs)** work by im
 
 ---
 
-## 🏗️ Architecture
-
-graph TD
-    A[Image (ViT)] --> B[Cross-Attention]
-    B --> C[Transformer Decoder]
-    C --> D[Output Tokens (Text)]
-
-    E[Text Input] --> B
-    D --> F[Next-token Prediction]
+<pre> ## 🏗️ Architecture ```mermaid graph TD A[Image (ViT)] --> B[Cross-Attention] B --> C[Transformer Decoder] C --> D[Output Tokens (Text)] E[Text Input] --> B D --> F[Next-token Prediction] ``` </pre>
 
 
 
