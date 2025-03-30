@@ -16,23 +16,14 @@ To deeply understand how **multimodal large language models (MLLMs)** work by im
 
 ## 🏗️ Architecture
 
-          ┌────────────┐
-          │  Image (ViT)│
-          └─────┬──────┘
-                │
-                ▼
-       ┌──────────────────┐
-       │  Cross-Attention │◄─────┐
-       └────────┬─────────┘      │
-                │                │
-                ▼                │
-      ┌──────────────────────┐   │
-      │  Transformer Decoder │   │
-      └────────────┬─────────┘   │
-                   │             │
-                   ▼             │
-         Output Tokens (Text) ◄──┘
-            (Next-token prediction)
+graph TD
+    A[Image (ViT)] --> B[Cross-Attention]
+    B --> C[Transformer Decoder]
+    C --> D[Output Tokens (Text)]
+
+    E[Text Input] --> B
+    D --> F[Next-token Prediction]
+
 
 
 - Cross-attention is injected between decoder layers so that text can **attend to image embeddings**.
